@@ -28,12 +28,21 @@ app.post('/', async (req, res) => {
     //hier muss es sein
     
     
-    const response =  openai.ChatCompletion.create({
+//    const response =  openai.ChatCompletion.create({
+  //model="gpt-3.5-turbo",
+  //messages=[
+   // {"role": "user", "content": "Hello!"}]
+//}
+//)
+
+
+completion = openai.ChatCompletion.create(
   model="gpt-3.5-turbo",
   messages=[
-    {"role": "user", "content": "Hello!"}]
-}
+    {"role": "user", "content": "Hello!"}
+  ]
 )
+  
 
   //  const response = await openai.createCompletion({
     //  model: "text-davinci-003",
