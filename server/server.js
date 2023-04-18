@@ -35,7 +35,8 @@ app.post('/', async (req, res) => {
 //}
 //)
 
-completion = openai.ChatCompletion.create({
+  const completion = await openai.createChatCompletion()
+//completion = openai.ChatCompletion.create({
   model: "gpt-3.5-turbo",
   messages: [
     {"role": "user", "content": "Hello!"}
@@ -65,7 +66,7 @@ completion = openai.ChatCompletion.create({
     res.status(500).json({
       error_message: error.message,
       error_stacktrace: error.stack
-  })
+  })}
 })
 
 app.listen(5000, () => console.log('AI server started on http://localhost:5000'))
