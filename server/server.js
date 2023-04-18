@@ -30,8 +30,8 @@ app.post('/', async (req, res) => {
     
     const response =  openai.ChatCompletion.create({
   model="gpt-3.5-turbo",
-  messages=
-    {"role": "user", "content": "Hello!"}
+  messages=[
+    {"role": "user", "content": "Hello!"}]
 }
 )
 
@@ -46,7 +46,7 @@ app.post('/', async (req, res) => {
     //});
 
     res.status(200).send({
-      bot: response.data.choices[0].text
+   //   bot: response.data.choices[0].text
     });
 
   } catch (error) {
