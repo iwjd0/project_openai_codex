@@ -30,9 +30,9 @@ app.post('/', async (req, res) => {
     
     const response = await openai.ChatCompletion.create(
   model="gpt-3.5-turbo",
-  messages=[
+  messages=
     {"role": "user", "content": "Hello!"}
-  ]
+  
 )
 
   //  const response = await openai.createCompletion({
