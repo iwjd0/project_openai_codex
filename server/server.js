@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
 
 app.post('/', async (req, res) => {
   try {
-    const prompt = req.body.prompt;
+   // const prompt = req.body.prompt;
     
     //hier muss es sein
     
@@ -34,7 +34,6 @@ app.post('/', async (req, res) => {
    // {"role": "user", "content": "Hello!"}]
 //}
 //)
-
 
 completion = openai.ChatCompletion.create({
   model: "gpt-3.5-turbo",
