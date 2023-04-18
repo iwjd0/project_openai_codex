@@ -35,7 +35,7 @@ app.post('/', async (req, res) => {
 //}
 //)
 
-  const completion = await openai.createChatCompletion()
+  const completion = await openai.createChatCompletion({
 //completion = openai.ChatCompletion.create({
   model: "gpt-3.5-turbo",
   messages: [
@@ -62,11 +62,11 @@ app.post('/', async (req, res) => {
 
   } catch (error) {
     console.error(error)
-   // res.status(500).send(error || 'Something went wrong');
-    res.status(500).json({
-      error_message: error.message,
-      error_stacktrace: error.stack
-  })}
-})
+    res.status(500).send(error || 'Something went wrong');
+   // res.status(500).json({
+    //  error_message: error.message,
+     // error_stacktrace: error.stack
+  
+}
 
 app.listen(5000, () => console.log('AI server started on http://localhost:5000'))
