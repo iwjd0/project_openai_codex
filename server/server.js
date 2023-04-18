@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
 
 app.post('/', async (req, res) => {
   try {
-   // const prompt = req.body.prompt;
+     const prompt = req.body.prompt;
     
     //hier muss es sein
     
@@ -61,8 +61,11 @@ completion = openai.ChatCompletion.create({
 
   } catch (error) {
     console.error(error)
-    res.status(500).send(error || 'Something went wrong');
-  }
+   // res.status(500).send(error || 'Something went wrong');
+    res.status(500).json({
+      error_message: error.message,
+      error_stacktrace: error.stack
+  })
 })
 
 app.listen(5000, () => console.log('AI server started on http://localhost:5000'))
