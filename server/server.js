@@ -35,15 +35,14 @@ app.post('/', async (req, res) => {
 //}
 //)
 
-  const completion = await openai.createChatCompletion({
+  const completion = await openai.createChatCompletion()
 //completion = openai.ChatCompletion.create({
-  model: "gpt-3.5-turbo",
-  messages: [
-    {"role": "user", "content": "Hello!"}
-  ]
+ // model: "gpt-3.5-turbo",
+ // messages: [
+  //  {"role": "user", "content": "Hello!"}
+  //]
   
-  }
-)
+
   
 
   //  const response = await openai.createCompletion({
